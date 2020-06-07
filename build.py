@@ -14,9 +14,11 @@ list_dx = json.loads(rp.text)
 dict_list = []
 for list_a in list_dx['data']:
   qq_id = list_a['user_id']
+  qq_name = list_a['card']
   data2 = {
 		'user_id' : qq_id,
                 'status_id' : '0'
+                'user_name' : qq_name
 	  }
   dict_list.append(data2)
 with open('./dx.json','w') as r:
