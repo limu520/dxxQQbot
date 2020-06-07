@@ -51,8 +51,6 @@ def server():
                    "message":"请大佬尽快将截图发给我这个机器人，并且给他回复一个ok（大小写注意）,如果已经发过截图还受骚扰的，请再次给本机器人发一次截图，并且回复一个ok，最后请暴打本机器人制作者————limu。",
                    "auto_escape":False
                   }
-                   "auto_escape":False
-                  }
            aaa = requests.post(api_url2,data=msg2)
            print(aaa)
     return ''
