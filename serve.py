@@ -2,6 +2,10 @@
 from flask import *
 from json import *
 import requests
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 bot_server = Flask(__name__)
 
@@ -36,7 +40,7 @@ def server():
            msg1 = {
                    "message_type":'private',
                    "user_id":manager_id,
-                   "message":asd_list['user_id'],
+                   "message":"QQ: " + str(asd_list['user_id']) + "     昵称：" + str(asd_list['user_name']).decode('utf-8'),
                    "auto_escape":False
                   }
            xbg = requests.post(api_url2,data=msg1)
