@@ -17,6 +17,7 @@ def server():
     print message
     qq_id = data_2['user_id']
     print qq_id
+    manager_id = "管理员QQ"
     if message == 'ok':
        asd_dist = []
        with open("./dx.json",'r') as p:
@@ -27,20 +28,20 @@ def server():
             asd_dist.append(load_dict)
        with open('./dx.json','w') as g:
           json.dump(asd_dist,g)
-    if message == 'list':
+    if message == 'list' and str(qq_id) == str(manager_id):
        with open("./dx.json",'r') as k:
          awd = json.load(k)
        for asd_list in awd:
          if asd_list['status_id'] == '0':
            msg1 = {
                    "message_type":'private',
-                   "user_id":"管理员qq",
+                   "user_id":manager_id,
                    "message":asd_list['user_id'],
                    "auto_escape":False
                   }
            xbg = requests.post(api_url2,data=msg1)
            print(xbg)
-    if message == 'ccc':
+    if message == 'ccc' and str(qq_id) == str(manager_id):
        with open("./dx.json",'r') as k:
          awd = json.load(k)
        for asd_list in awd:
