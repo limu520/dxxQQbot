@@ -17,7 +17,7 @@ for list_a in list_dx['data']:
   qq_name = list_a['card']
   data2 = {
 		'user_id' : qq_id,
-                'status_id' : '0'
+                'status_id' : '0',
                 'user_name' : qq_name
 	  }
   dict_list.append(data2)
