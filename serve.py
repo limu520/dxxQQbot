@@ -3,6 +3,7 @@ from flask import *
 from json import *
 import requests
 import sys
+import os
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -58,6 +59,15 @@ def server():
                   }
            aaa = requests.post(api_url2,data=msg2)
            print(aaa)
+    if message == 'build' and str(qq_id) == str(manager_id):
+          os.system('python2 ./build.py')
+          msg3 = {
+                 "message_type":'private',
+                 "user_id":manager_id,
+                 "message":"重置成功！\n 机器人制作者————limu。",
+                 "auto_escape":False
+                  }
+          bbb = requests.post(api_url2,data=msg3)
     return ''
 
 
